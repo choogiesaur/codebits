@@ -1,4 +1,4 @@
-n = 9
+n = input("Enter yer number: ")
 count = 0
 print "n = " + str(n)
 
