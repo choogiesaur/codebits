@@ -1,4 +1,5 @@
-def binsearch(lst, x):
+# iterative implementation of binary search
+def binsearch_iterative(lst, x):
 	left 	= 0
 	right 	= len(lst) - 1
 	mid 	= left + (right - left) / 2
@@ -20,4 +21,4 @@ def binsearch(lst, x):
 	print x, "not found"
 
 lol = [1,2,3,4,5,6,7,8,9,10]
-binSearch(lol, 9)
+binsearch_iterative(lol, 9)
