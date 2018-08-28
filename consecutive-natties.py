@@ -1,3 +1,5 @@
+# For input n: determine how many sequences of consecutive natural numbers sum to n
+
 n = input("Enter yer number: ")
 count = 0
 print "n = " + str(n)
