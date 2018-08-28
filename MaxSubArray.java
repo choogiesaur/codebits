@@ -3,8 +3,6 @@ class MaxSubArray {
     public int maxSubArray(int[] nums) {
         int pos = 0;
         int num = nums.length;
-        int maxSum = Integer.MIN_VALUE;
-        //int[] newArray = Arrays.copyOfRange(oldArray, startIndex, endIndex);
         
         if(num == 1){
             return nums[pos];
