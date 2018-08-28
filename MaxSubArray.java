@@ -1,4 +1,5 @@
 // given integer array, recursively find contiguous subarray with max sum
+// times out on leetcode, there is a faster way
 class MaxSubArray {
     public int maxSubArray(int[] nums) {
         int pos = 0;
