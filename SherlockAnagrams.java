@@ -8,7 +8,9 @@ import java.util.regex.*;
 
 public class SherlockAnagrams {
 
-    // Complete the sherlockAndAnagrams function below.
+    // For given string s, determine how many pairs of its substrings are anagrams
+    // this hashtable solution times out on HackerRank but works
+    // faster way is to convert strings to char array, sort, check if equal
     static int sherlockAndAnagrams(String s) {
 
         ArrayList < String > subs = new ArrayList < String > ();
@@ -62,25 +64,26 @@ public class SherlockAnagrams {
             }
         }
 
-        for (Character c: s1hash.keySet()) {
-
-            if (s2hash.get(c) == null) {
-                return false;
-            } else if (s1hash.get(c) == s2hash.get(c)) {
-                continue;
-            } else {
-                return false;
-            }
+        //if character set not same, not anagrams
+        if(s1hash.keySet().size() != s2hash.keySet().size()){
+            return false;
         }
 
-        for (Character c: s2hash.keySet()) {
-
-            if (s1hash.get(c) == null) {
+        for (Character c: s1hash.keySet()) {
+            
+            if(s2hash.get(c) == null || s1hash.get(c) != s2hash.get(c)){
                 return false;
-            } else if (s1hash.get(c) == s2hash.get(c)) {
-                continue;
             } else {
+                continue;
+            }
+        }
+        
+        for (Character c: s2hash.keySet()) {
+            
+            if(s1hash.get(c) == null || s1hash.get(c) != s2hash.get(c)){
                 return false;
+            } else {
+                continue;
             }
         }
         
