@@ -19,7 +19,7 @@ class MaxSubArray {
             return Math.max(numLess,posMore);
         }
     }
-    
+    //helper function for above
     public int sumArray(int arr[], int start, int num){
         int sum = 0;
         for (int i = start; i < num; i++){
