@@ -25,7 +25,8 @@ public class MultipleStringKeys {
             if (!(o instanceof StringKey)) return false;
             StringKey key = (StringKey) o;
             // might need to not be this lenient? as is, (x,y) == (y,x)
-            // return (this.s1.equals(key.s1) && this.s2.equals(key.s2)) || (this.s1.equals(key.s2) && this.s2.equals(key.s1));
+          	// dangerous because: although (x,y) == (y,x), hash((x ,y)) != hash((y,x)) 
+            //return (this.s1.equals(key.s1) && this.s2.equals(key.s2)) || (this.s1.equals(key.s2) && this.s2.equals(key.s1));
             return (this.s1.equals(key.s1) && this.s2.equals(key.s2));
         }
         
@@ -48,10 +49,25 @@ public class MultipleStringKeys {
         StringKey y = new StringKey("apple","grape");
         table.put(y, 1337);
         
-        StringKey z = new StringKey("apple","grape");
+        StringKey z = new StringKey("apple","pear");
         table.put(z, 999);
+      	
         
-        System.out.println(table.containsKey());
-        
+        System.out.println(table.containsKey(x));
+      	System.out.println(table.get(x));
+      	System.out.println(table.get(y));
+      	System.out.println(table.get(z));
+    	System.out.println();
+      
+      	table.put(z, 91919); 
+      	System.out.println(table.get(z));
+      	System.out.println();	
+      
+      	StringKey x2 = new StringKey("banana","apple");
+      	System.out.println(x.equals(x2));
+      	table.put(x2, 333);
+      	System.out.println(table.get(x2));
+      	System.out.println(table.get(x));
+      
     }
 }
