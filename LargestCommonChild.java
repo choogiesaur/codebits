@@ -6,8 +6,12 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
+// HackerRank problem to find size of largest common child of two strings
+// Example of using a helper object to hash multiple values at once, in this case (String, String)
+// TODO: pull out hashtable logic, not needed with current algo
 public class LargestCommonChild {
-
+    
+    // helper class; a (String, String) key pair that can be hashed
     public static class StringKey {
         
         public final String s1;
@@ -83,22 +87,11 @@ public class LargestCommonChild {
         return max;        
     }
 
-    private static final Scanner scanner = new Scanner(System.in);
-
     public static void main(String[] args) throws IOException {
-        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-
-        String s1 = scanner.nextLine();
-
-        String s2 = scanner.nextLine();
+        String s1 = "LLAMA";
+        String s2 = "AM";
 
         int result = commonChild(s1, s2);
-
-        bufferedWriter.write(String.valueOf(result));
-        bufferedWriter.newLine();
-
-        bufferedWriter.close();
-
-        scanner.close();
+        System.out.println(result);
     }
 }
