@@ -25,7 +25,8 @@ public class MultipleStringKeys {
             if (!(o instanceof StringKey)) return false;
             StringKey key = (StringKey) o;
             // might need to not be this lenient? as is, (x,y) == (y,x)
-            return (this.s1.equals(key.s1) && this.s2.equals(key.s2)) || (this.s1.equals(key.s2) && this.s2.equals(key.s1));
+            // return (this.s1.equals(key.s1) && this.s2.equals(key.s2)) || (this.s1.equals(key.s2) && this.s2.equals(key.s1));
+            return (this.s1.equals(key.s1) && this.s2.equals(key.s2));
         }
         
         @Override
@@ -39,10 +40,18 @@ public class MultipleStringKeys {
     }
 
     public static void main(String[] args) throws IOException {
-        String s1 = "LLAMA";
-        String s2 = "AM";
-
-        int result = commonChild(s1, s2);
-        System.out.println(result);
+        Hashtable<StringKey, Integer> table = new Hashtable<StringKey, Integer>();
+        
+        StringKey x = new StringKey("apple","banana");
+        table.put(x, 1);
+        
+        StringKey y = new StringKey("apple","grape");
+        table.put(y, 1337);
+        
+        StringKey z = new StringKey("apple","grape");
+        table.put(z, 999);
+        
+        System.out.println(table.containsKey());
+        
     }
 }
