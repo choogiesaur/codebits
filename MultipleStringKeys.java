@@ -52,7 +52,6 @@ public class MultipleStringKeys {
         StringKey z = new StringKey("apple","pear");
         table.put(z, 999);
       	
-        
         System.out.println(table.containsKey(x));
       	System.out.println(table.get(x));
       	System.out.println(table.get(y));
