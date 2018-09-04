@@ -25,7 +25,7 @@ public class MultipleStringKeys {
             if (!(o instanceof StringKey)) return false;
             StringKey key = (StringKey) o;
             // might need to not be this lenient? as is, (x,y) == (y,x)
-          	// dangerous because: although (x,y) == (y,x), hash((x ,y)) != hash((y,x)) 
+            // dangerous because: although (x,y) == (y,x), hash((x ,y)) != hash((y,x)) 
             //return (this.s1.equals(key.s1) && this.s2.equals(key.s2)) || (this.s1.equals(key.s2) && this.s2.equals(key.s1));
             return (this.s1.equals(key.s1) && this.s2.equals(key.s2));
         }
