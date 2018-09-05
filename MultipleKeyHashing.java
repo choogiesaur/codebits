@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.regex.*;
 
-public class MultipleStringKeys {
+public class MultipleKeyHashing {
 
     // helper class; a (String, String) key pair that can be hashed
     public static class StringKey {
