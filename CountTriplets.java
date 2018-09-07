@@ -29,8 +29,8 @@ public class CountTriplets {
                 if(visited2.containsKey(curr*r)){ //if we've encountered r * r * current num
                     count += visited2.getOrDefault(curr*r, 0L);
                 }
-                long curr2 = visited.get(curr*r);
-                visited2.put(curr, visited.getOrDefault(curr,0L)+curr2);
+                long times = visited.get(curr*r);
+                visited2.put(curr, visited.getOrDefault(curr,0L)+times);
                 //basically increases by the number of possible ways we could have gotten there
             }
             visited.put(curr, visited.getOrDefault(curr,0L)+1); 
