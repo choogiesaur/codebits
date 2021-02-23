@@ -1,5 +1,6 @@
 from PIL import Image
 
+# Resize specified PNG file to 256x256 using Python Imaging Library
 def resize_png(file_name):
 	im = Image.open(file_name)
 	
