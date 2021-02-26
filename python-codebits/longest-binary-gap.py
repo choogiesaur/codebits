@@ -6,6 +6,13 @@
 # Problem: Find the longest binary gap for input integer
 
 # Not completely correct yet!
+# Failed cases:
+# trailing_zeroes
+# n=6=110_2 and n=328=101001000_2
+# simple3
+# n=1162=10010001010_2 and n=5=101_2
+# medium3
+# n=66561=10000010000000001_2
 
 def solution(N):
     # write your code in Python 3.6
