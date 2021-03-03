@@ -1,6 +1,30 @@
 from collections import defaultdict
 # From leetcode
+# NOTE: Different places have slight variations of this question.
+# If only the network ranks of adjacent cities matters, a simple, fast solution is available
+# If the maximal network rank could be found in cities x, y where x and y are not adjacent, more thought is needed
 class Solution:
+    # This solution assumes network rank is only considered if the cities are connected
+    def maximalNetworkRank_SIMPLE(self, n: int, roads: List[List[int]]) -> int:
+        
+        # ith value is the number of neighbors of i
+        num_neighbors = defaultdict(int)
+        # adjacency check
+        adj = defaultdict(lambda: False)
+        
+        max_network_rank = 0
+       
+        for item in roads:
+            num_neighbors[item[0]] += 1
+            num_neighbors[item[1]] += 1
+        
+        # ASSUME the only network ranks we observe are for adjacent cities
+        for item in roads:
+            max_network_rank = max(max_network_rank, num_neighbors[item[0]] + num_neighbors[item[1]] - 1)
+        
+        return max_network_rank
+    
+    # This solution assumes the maximal network rank could be for cities x,y where x and y are not adjacent        
     def maximalNetworkRank(self, n: int, roads: List[List[int]]) -> int:
       
         # ith value is the number of neighbors of i
