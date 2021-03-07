@@ -4,7 +4,7 @@ class PythonStackerooni:
 
 	# Internal class for items in stack
 	class StackNode:
-		def __init__(self, val, child):
+		def __init__(self, val = 0, child = None):
 			self.val = val
 			self.child = child
 
