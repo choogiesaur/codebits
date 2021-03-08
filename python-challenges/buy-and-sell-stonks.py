@@ -1,5 +1,7 @@
 # For list of stock prices where list[i] = stock price for the ith day,
 # Find the maximum profit you can make by buying one day, selling on a later day
+# This is a one pass solution.
+# Hint: Observe maximal distance from a valley to a later peak.
 
 prices = [7,1,5,3,6,4]
 
