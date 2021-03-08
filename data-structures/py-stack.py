@@ -1,6 +1,6 @@
 ### A Python implementation of a Stack data structure
 
-class PythonStackerooni:
+class PyStack:
 
 	# Internal class for items in stack
 	class StackNode:
@@ -47,7 +47,7 @@ class PythonStackerooni:
 		self.size = 0
 
 ### Testing code
-my_stack = PythonStackerooni()
+my_stack = PyStack()
 print(my_stack.get_size())
 
 # Push 1
