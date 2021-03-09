@@ -5,6 +5,9 @@ def isValid(self, s: str) -> bool:
 	# Python EZ-Stack:
 	# Just use List with append(), pop() // both run in O(1) time
 
+	if len(s) % 2 != 0:
+		return False
+
 	stackerooni = []
 
 	for char in s:
