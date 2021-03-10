@@ -46,3 +46,35 @@ def rob(self, nums: List[int]) -> int:
 	return max(max_at_i[len(nums) - 1], max_at_i[len(nums) - 2])
 
 print(rob(nums))
+
+# VARIATION: Numbers can be negative!
+# Solution: Any time you consider an element for addition to the subset, instead offer max(0, element)
+# This way if it detracts value, dont add it
+def maxSubsetSum(arr):
+    max_at = {}
+    total_max = 0
+    
+    length = len(arr)
+    
+    init1 = max(0, arr[0])
+    init2 = max(0, max(arr[0], arr[1]))
+    init3 = max(0, max(arr[1], max(0, arr[0]) + max(0,arr[2])))
+    
+    if length == 1:
+        return init1
+    elif length == 2:
+        return init2
+    elif length == 3:
+        return init3
+    
+    max_at[0] = init1
+    max_at[1] = init2
+    max_at[2] = init3
+    print("Base cases:", init1, init2, init3)
+    for i in range(3, length):
+        max_at[i] = max(max_at[i-2], max_at[i-3]) + max(0, arr[i])
+        print(i, max_at[i])
+        
+    return max(max_at[length - 1], max_at[length - 2])
+
+print(maxSubsetSum([3, 5, -7, 8, 10]))
