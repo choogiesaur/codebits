@@ -24,6 +24,7 @@ def rob(self, nums: List[int]) -> int:
 	# Dict to keep track of max profit combo ending at i
 	max_at_i = {}
 
+	# Base cases
 	if len(nums) == 0:
 		return 0
 	if len(nums) == 1:
@@ -36,11 +37,12 @@ def rob(self, nums: List[int]) -> int:
 		max_at_i[0] = nums[0]
 		max_at_i[1] = max(nums[0], nums[1])
 		max_at_i[2] = max(nums[0] + nums[2], nums[1])
-
+		
+	# max at this location is this element plus larger of the maxes 2 spots and 3 spots ago
 	for i in range(len(nums) - 3):
 		max_at_i[i + 3] = nums[i + 3] + max(max_at_i[i], max_at_i[i+1])
 
-	# print(max_at_i[len(nums) - 1], max_at_i[len(nums) - 2])
+	# Max possible for the entire array will either end at the last, or 2nd to last house
 	return max(max_at_i[len(nums) - 1], max_at_i[len(nums) - 2])
 
 print(rob(nums))
