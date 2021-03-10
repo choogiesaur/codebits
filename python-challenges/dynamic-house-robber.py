@@ -1,5 +1,23 @@
 # nums = [1,2,3,1]
-nums = [2,7,9,3,1]
+# nums = [2,7,9,3,1]
+nums = [2, 3, 1, 5, 7, 8, 4, 9]
+
+# Problem: You have a row of houses to rob, with their monetary value expressed as a number.
+# You want to maximize the profit you obtain without robbing any 2 houses that are adjacent to eachother.
+
+# My algorithm:
+# initialize m as such, where m[i] is the maximum profit possible for a combination of houses ending at i:
+# m[0] = n[0]
+# m[1] = max(n[0], n[1])
+# m[2] = max(n[0] + n[2], n[1])
+# after that...take the case of n[3]. to maximize profit:
+# you can't add n[2], it is adjacent
+# you could add n[1] and you could add n[0], so add the higher of the two
+# if there was an element before that, i.e n[x]:
+# n[X] n[0] n[1] n[2] n[3]
+# then you could always add n[x] and n[x+2]; since elements are always >= 0, you can only increase profit
+# so, iterate the array and at each index i: 
+# max_at_i = arr[i] + max(max_at_i[i-2], max_at_i[i-3])
 
 def rob(self, nums: List[int]) -> int:
 
