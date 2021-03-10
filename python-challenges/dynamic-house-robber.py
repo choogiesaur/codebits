@@ -10,14 +10,14 @@ nums = [2, 3, 1, 5, 7, 8, 4, 9]
 # m[0] = n[0]
 # m[1] = max(n[0], n[1])
 # m[2] = max(n[0] + n[2], n[1])
-# after that...take the case of n[3]. to maximize profit:
-# you can't add n[2], it is adjacent
-# you could add n[1] and you could add n[0], so add the higher of the two
-# if there was an element before that, i.e n[x]:
-# n[X] n[0] n[1] n[2] n[3]
-# then you could always add n[x] and n[x+2]; since elements are always >= 0, you can only increase profit
+# after that...take the case of n[i]. to maximize profit:
+# you can't add n[i-1], it is adjacent
+# you could add n[i-2] and you could add n[i-3], so add the higher of the two
+# if there was an element before that, i.e n[i-4]:
+# n[i-4] n[i-3] n[i-2] n[i-1] n[i]
+# then you could ALWAYS add n[i-2] ALONG with n[i-4]; since elements are always >= 0, you can only increase profit
 # so, iterate the array and at each index i: 
-# max_at_i = arr[i] + max(max_at_i[i-2], max_at_i[i-3])
+# max_at_i[i] = arr[i] + max(max_at_i[i-2], max_at_i[i-3])
 
 def rob(self, nums: List[int]) -> int:
 
@@ -47,7 +47,7 @@ def rob(self, nums: List[int]) -> int:
 
 print(rob(nums))
 
-# VARIATION: Numbers can be negative!
+# VARIATION: Same problem but numbers can be negative!
 # Solution: Any time you consider an element for addition to the subset, instead offer max(0, element)
 # This way if it detracts value, dont add it
 def maxSubsetSum(arr):
