@@ -6,7 +6,9 @@ def max_subarray(self, nums: List[int]) -> int:
 
 	# Key: index, Val: Max sum for a subarray ending at this point
 	d = {}
-
+	
+	# TODO: Just start loop at index 1 and prefill dict with base case (i == 0)
+	
 	for i in range(len(nums)):
 		# Base case: 1st element
 		if i == 0:
