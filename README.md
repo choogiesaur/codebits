@@ -15,3 +15,5 @@ Python solutions to common coding challenges.
 
 ## python-codebits
 Python scripts to do various coding tasks such as batch converting images, formatting text in desired ways.
+
+[![Contact me on Codementor](https://www.codementor.io/m-badges/firas.sattar/im-a-cm-g.svg)](https://www.codementor.io/@firas.sattar?refer=badge)
