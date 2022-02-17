@@ -1,4 +1,7 @@
 # https://www.hackerrank.com/challenges/sherlock-and-valid-string
+# Solution is close, but need to solve the case where:
+# aabbc
+# 2 unique frequencies but the majority are frequency 2, need to recognize that you can delete the lone c
 #!/bin/python3
 
 import math
