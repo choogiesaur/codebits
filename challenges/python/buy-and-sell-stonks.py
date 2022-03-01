@@ -27,3 +27,25 @@ def maxProfit(self, prices: List[int]) -> int:
                 max_profit = prices[i] - min_encountered
 
     return max_profit
+
+# Alt solution processing array in reverse
+def maxProfit(self, prices: List[int]) -> int:
+
+    min_price = 10001
+    max_price = 0
+    max_profit = 0
+
+    for curr_price in reversed(prices):
+
+        # Can always update with newly found min price
+        min_price = min(min_price, curr_price)
+
+        # If you found a new max, it occurred before the existing min, so...
+        # Take note of current profit, update max profit if new one is better
+        # Reset min to current price
+        if curr_price > max_price:
+            max_profit = max(max_profit, max_price - min_price)
+            max_price = curr_price
+            min_price = curr_price
+
+    return max(max_profit, max_price - min_price)
