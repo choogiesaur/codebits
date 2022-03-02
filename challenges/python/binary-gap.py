@@ -26,3 +26,6 @@ def solution(N):
             i += 1
 
     return longest_gap_length
+
+print("1041 in binary is: " + "{0:b}".format(1041))
+print(solution(1041))
