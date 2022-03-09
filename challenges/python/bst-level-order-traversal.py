@@ -22,21 +22,22 @@ class Solution:
         while queue:
             
             (curr_node, level) = queue.popleft()
-            # print("popping", curr_node.val, level)
             
+            # If level of popped node is greater than curr level, we've reached next level in queue
             if level > curr_level:
                 curr_level = level
+                # Put it in output and start new level list
                 output_list.append(list_for_level)
                 list_for_level = []
             
             list_for_level.append(curr_node.val)
             
+            # Enqueue its children
             if curr_node.left:
-                # print("appending", curr_node.left.val, level+1)
                 queue.append((curr_node.left, level+1))
             if curr_node.right:
-                # print("appending", curr_node.right.val, level+1)
                 queue.append((curr_node.right, level+1))
-            
+                
+        # Can I eliminate having to append one last time?    
         output_list.append(list_for_level)
         return output_list
