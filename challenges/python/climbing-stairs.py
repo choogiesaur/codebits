@@ -37,3 +37,17 @@ class Solution:
         # 1 2 . 1
         # 1 1 2 .  
         # 2 . 2 .
+    
+    # The above is assuming the grader is calling solution on multiple cases so the global dict even matters. Better way with for loop:
+    def climbStairs(self, n: int) -> int:
+        d = {
+            0:0,
+            1:1,
+            2:2
+        }
+
+        # We want to populate last case, so don't skip n
+        for i in range(3, n+1):
+            d[i] = d[i-1] + d[i-2]
+
+        return d[n]
