@@ -27,3 +27,15 @@ def max_subarray(self, nums: List[int]) -> int:
 	return curr_max
 
 print(max_subarray(nums))
+
+# Modifying array as you go to store the memo; Less space complexity
+def maxSubArray(self, nums: List[int]) -> int:
+	# Attempt kadane's
+	max_sum = nums[0]
+
+	for i in range(1, len(nums)):
+	    # Max of itself or itself and array before, dont forget
+	    nums[i] = max(nums[i], nums[i] + nums[i-1])
+	    max_sum = max(max_sum, nums[i])
+
+	return max_sum
