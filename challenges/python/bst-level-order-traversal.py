@@ -41,3 +41,28 @@ class Solution:
         # Can I eliminate having to append one last time?    
         output_list.append(list_for_level)
         return output_list
+    
+    # New solution that's more intuitive to code using for loop (loop exactly length of each level to create level lists)
+    def levelOrder_alt(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return []
+        
+        output_list = []
+        queue = deque([root])
+
+        while queue:
+            level_list = []
+            curr_len = len(queue)
+
+            for i in range(curr_len):
+                curr = queue.popleft()
+                level_list.append(curr.val)
+
+                if curr.left:
+                    queue.append(curr.left)
+                if curr.right:
+                    queue.append(curr.right)
+
+            output_list.append(level_list)
+
+        return output_list
