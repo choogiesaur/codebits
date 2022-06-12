@@ -1,5 +1,11 @@
 # pip install opencv-python
 # pip install opencv-contrib-python (for extra modules)
+# https://github.com/Saafke/EDSR_Tensorflow/tree/master/models
+# download EDSR_x3.pb from above
+
+# This program reads first command line argument, and upscales image by 3x
+# using a pretrained model.
+# usage: python upscale.py image.jpg
 
 import cv2
 from cv2 import dnn_superres
