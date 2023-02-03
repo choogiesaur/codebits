@@ -1,3 +1,4 @@
+# LC 121
 # For list of stock prices where list[i] = stock price for the ith day,
 # Find the maximum profit you can make by buying one day, selling on a later day
 # This is a one pass solution.
