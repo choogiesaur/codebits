@@ -7,6 +7,20 @@ prices = [7,1,5,3,6,4]
 
 def maxProfit(self, prices: List[int]) -> int:
 
+    max_profit = float('-inf')
+    min_found = prices[0]
+
+    if len(prices) == 1:
+        return 0
+
+    for i in range(1, len(prices)):
+        min_found = min(min_found, prices[i])
+        max_profit = max(max_profit, prices[i] - min_found)
+
+    return max_profit
+
+def maxProfit(self, prices: List[int]) -> int:
+
     # Keep track of the smallest price seen so far
     # Max value from description is 10 ^ 4
     # Could use sys.maxint
