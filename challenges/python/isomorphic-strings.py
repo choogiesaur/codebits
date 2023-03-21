@@ -1,3 +1,39 @@
+# LC 205
+# Another solution I wrote that was slightly faster; Array of encodings instead of incremented char
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        # traverse strings and encode to number
+
+        s_dict = {}
+        curr = 0
+        s_rep = []
+        for char in s:
+            # Either pick an encoding for curr char
+            if char not in s_dict:
+                s_dict[char] = curr
+                s_rep.append(curr)
+                curr += 1
+            # or retrieve its encoding from dict
+            else:
+                s_rep.append(s_dict[char])
+        
+        t_dict = {}
+        curr = 0
+        t_rep = []
+        for char in t:
+            if char not in t_dict:
+                t_dict[char] = curr
+                t_rep.append(curr)
+                curr += 1
+            else:
+                t_rep.append(t_dict[char])
+        
+        for i in range(len(s_rep)):
+            if s_rep[i] != t_rep[i]:
+                return False
+        
+        return True
+
 # Leetcode 205 
 # Convert strings to generic representation, which essentially shows how many different characters were used
 # if both strings end up with same representation, they are isomorphic
