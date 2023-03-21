@@ -1,3 +1,24 @@
+# another solution that was just as fast
+class Solution:
+    def isSubsequence(self, s: str, t: str) -> bool:
+        
+        j = 0
+        for char in s:
+            found_curr = False
+            if j == len(t):
+                return False
+            
+            while j < len(t):
+                if char == t[j]:
+                    found_curr = True
+                    j += 1
+                    break
+                j += 1
+
+            if not found_curr:
+                return False
+        return True
+
 # LC 392
 
 class Solution:
