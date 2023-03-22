@@ -27,6 +27,7 @@ class Solution:
                 i += i_direc
 
             i_direc = -i_direc
+            i += i_direc
             
             while 0 < j < rise and (i, j) not in visited:
                 visited.add((i, j))
@@ -36,6 +37,7 @@ class Solution:
                 j += j_direc
 
             j_direc = -j_direc
+            j += j_direc
             
         return ret
 
