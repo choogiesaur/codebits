@@ -8,7 +8,7 @@ Python scripts to do various coding tasks such as batch converting images, forma
 From-scratch implementations of well-known algorithms, mostly in Python. WOAHHH TEST!
 
 ## data-structures
-From-scratch implementations of well-known data structures, mostly in Python.
+From-scratch implementations of well-known data structures, mostly in Python. Ayyyyy test!
 
 ## challenges
 Java / Python / JS solutions to common coding challenges.
