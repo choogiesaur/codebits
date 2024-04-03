@@ -1,5 +1,5 @@
 # codebits
-Small bits of code I've written over the years. Some are useful little scripts made to solve everyday problems encountered while coding (image conversion, text file manipulation, etc.) and others are solutions to common coding challenges.
+Small bits of code I've written over the years. Some are useful little scripts made to solve everyday problems encountered while coding (image conversion, text file manipulation, etc.) and others are solutions to common coding challenges. TEST!
 
 ## python-codebits
 Python scripts to do various coding tasks such as batch converting images, formatting text in desired ways.
