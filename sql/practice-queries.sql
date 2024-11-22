@@ -27,3 +27,9 @@ WHERE weight BETWEEN 100 AND 120;
 UPDATE patients
 SET allergies='NKA'
 WHERE allergies IS NULL
+
+-- Aggregations: COUNT
+-- count() with distinct + field, counts distinct values of the given field
+select count(distinct sID) 
+from Apply 
+where cName = 'Cornell';
