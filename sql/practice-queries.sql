@@ -21,3 +21,9 @@ where weight >= 100 and weight <= 120;
 SELECT first_name, last_name
 FROM patients
 WHERE weight BETWEEN 100 AND 120;
+
+
+-- UPDATE statement
+UPDATE patients
+SET allergies='NKA'
+WHERE allergies IS NULL
