@@ -33,3 +33,17 @@ WHERE allergies IS NULL
 select count(distinct sID) 
 from Apply 
 where cName = 'Cornell';
+
+-- Colleges with < 5 distinct APPLICANTS
+select cName 
+from Apply 
+group by cName 
+having count(distinct sID) < 5;
+
+-- vs ...
+
+-- Colleges with < 5 APPLICATIONS
+select cName 
+from Apply 
+group by cName 
+having count(*) < 5; -- each row is an application
