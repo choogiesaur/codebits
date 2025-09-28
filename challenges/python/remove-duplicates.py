@@ -16,3 +16,21 @@ class Solution:
                 members.add(nums[i])
                 i += 1
                 
+
+## diff version that required returning k, number of unique elements
+    ## find faster soln
+    def removeDuplicates2(self, nums: List[int]) -> int:
+        seen = set()
+        k = 0
+        i = 0
+        while i < len(nums):
+            if nums[i] in seen:
+                del nums[i]
+            else:
+                seen.add(nums[i])
+                k += 1
+                i += 1
+
+        return k
+
+        
